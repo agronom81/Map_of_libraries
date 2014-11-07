@@ -1,0 +1,63 @@
+body {
+	background-image: url(../img/bgr.png);
+}
+
+header {
+	text-align: center;
+	text-shadow:3px 3px 10px #391b1b,-3px -3px 10px #767641;color: #101921;
+}
+
+#map {
+	margin-left: auto;
+	margin-right: auto;
+  width:790px;
+  height:1000px;
+	background-color: #E3E3E3;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 
+							-23px 0 20px -23px rgba(0, 0, 0, .8), 
+							23px 0 20px -23px rgba(0, 0, 0, .8), 
+							0 0 40px rgba(0, 0, 0, .1) inset; 
+}
+
+.point {
+  position:absolute;
+	margin-left: 50px;
+  display:none;
+  padding:10px 15px;
+  background:#7BB9F0;
+  font-size:14px;
+  font-weight:400;
+  /* скруглённые уголки */
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+	box-shadow: 0 0 10px 5px #242222;
+}
+
+     
+.point .close {
+  display:block;
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  width:24px;
+  height:24px;
+  text-indent:-9999px;
+  outline:none;
+  background:url(../img/close.png) no-repeat;
+}
+     
+.point img {
+  vertical-align:middle;
+  margin-right:10px;
+}
+
+.point span {
+	font-weight: 700;
+	font-style: italic;
+}
+
+tspan {
+	font-size: 1.5em;
+	font-style: italic;
+}
