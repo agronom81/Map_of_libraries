@@ -1,10 +1,49 @@
+@font-face {
+    font-family: 'pt_sansitalic';
+    src: url('../fonts/ptsansitalic-webfont.eot');
+    src: url('../fonts/ptsansitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ptsansitalic-webfont.woff2') format('woff2'),
+         url('../fonts/ptsansitalic-webfont.woff') format('woff'),
+         url('../fonts/ptsansitalic-webfont.ttf') format('truetype'),
+         url('../fonts/ptsansitalic-webfont.svg#pt_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sansbold';
+    src: url('../fonts/ptsansbold-webfont.eot');
+    src: url('../fonts/ptsansbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ptsansbold-webfont.woff2') format('woff2'),
+         url('../fonts/ptsansbold-webfont.woff') format('woff'),
+         url('../fonts/ptsansbold-webfont.ttf') format('truetype'),
+         url('../fonts/ptsansbold-webfont.svg#pt_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sansregular';
+    src: url('../fonts/ptsansregular-webfont.eot');
+    src: url('../fonts/ptsansregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ptsansregular-webfont.woff2') format('woff2'),
+         url('../fonts/ptsansregular-webfont.woff') format('woff'),
+         url('../fonts/ptsansregular-webfont.ttf') format('truetype'),
+         url('../fonts/ptsansregular-webfont.svg#pt_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
 	background-image: url(../img/bgr.png);
 }
 
 header {
+	font-family: 'pt_sansbold', Helvetica, sans-serif;
 	text-align: center;
-	text-shadow:3px 3px 10px #391b1b,-3px -3px 10px #767641;color: #101921;
+	color: #fff;
+	text-shadow:3px 3px 10px #af7042,-3px -3px 10px #e8e837;color: #101921;
 }
 
 #map {
@@ -12,28 +51,31 @@ header {
 	margin-right: auto;
   width:790px;
   height:1000px;
-	background-color: #E3E3E3;
+	background-image: url(../img/Paper.jpg);
 	box-shadow: 0 1px 4px rgba(0, 0, 0, .3), 
 							-23px 0 20px -23px rgba(0, 0, 0, .8), 
 							23px 0 20px -23px rgba(0, 0, 0, .8), 
-							0 0 40px rgba(0, 0, 0, .1) inset; 
+							0 0 40px rgba(0, 0, 0, .1) inset;
 }
 
+/*-----------Всплывающее окно-----------*/
 .point {
+	font-family: 'pt_sansregular', Helvetica, sans-serif;	
   position:absolute;
-	margin-left: 50px;
   display:none;
+	margin-left: 50px;
+	margin-top: 100px;
   padding:10px 15px;
-  background:#7BB9F0;
+  background-color:#7BB9F0;
   font-size:14px;
   font-weight:400;
   /* скруглённые уголки */
   -moz-border-radius:8px;
   -webkit-border-radius:8px;
   border-radius:8px;
-	box-shadow: 0 0 10px 5px #242222;
+	box-shadow: 0 0 10px 5px #7b7b7b;
+	
 }
-
      
 .point .close {
   display:block;
@@ -53,11 +95,56 @@ header {
 }
 
 .point span {
-	font-weight: 700;
+	font-family: 'pt_sansitalic', Helvetica, sans-serif;
 	font-style: italic;
+	font-weight: 700;
 }
 
+/*------------Названия селений------------*/
 tspan {
+	font-family: 'pt_sansitalic', Helvetica, sans-serif;
 	font-size: 1.5em;
 	font-style: italic;
+	font-weight: 400;
 }
+
+.social {
+		font-family: 'pt_sansregular', Helvetica, sans-serif;
+		display: block;
+    left: 0;
+    margin-top: 10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+		color: rgb(39, 39, 39);
+		text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+               		0px -5px 35px rgba(255,255,255,0.3);
+}
+a {
+	text-decoration: none;
+	/*color: #DDC08F;*/
+	color: rgb(39, 39, 39);
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+               0px -5px 35px rgba(255,255,255,0.3);
+	margin-left: 15px;
+  
+}
+
+i{
+	padding-right: 8px;
+	color: rgba(0,0,0,0.6);
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+               0px -5px 35px rgba(255,255,255,0.3);
+	padding-left: 15px;
+}
+
+a:hover, i:hover {
+	text-shadow:3px 3px 10px red,-3px -3px 10px yellow;
+	
+	color: #101921;
+	color: #454591;
+	
+}
+
+
+

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,8 +10,10 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="css/default.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/raphael.js"></script>
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/vendor/raphael.js"></script>
 		<script src="js/paths.js"></script>
 		<script src="js/init.js"></script>
 	</head>
@@ -16,10 +21,23 @@
 		<!--[if lt IE 8]>
             <p class="browsehappy">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a>, наслаждайтесь достижениями.</p>
     <![endif]-->
+    <!--[if IE 7]>
+		<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+<![endif]-->
     <header>
     	<h1>Україна, Миколаївська область, Жовтневий район</h1>
     	<h2>Бібліотеки - філії</h2>
     </header>
-		<div id="map"></div>
+    <section>
+    	<div id="map"></div>
+    </section>		
+		<footer class="social">
+			© Павел Петренко.	
+			<a href="https://www.facebook.com/pavel.petrenko.359"><i class="icon-facebook"></i>facebook
+</a>
+    	<a href="https://plus.google.com/u/0/+PavelPetrenko"><i class="icon-google-plus"></i>google plus
+</a>
+			<a href="mailto:agronom81@gmail.com?subject=Вопрос"><i class="icon-envelope-alt"></i>Email:agronom81@gmail.com</a>
+		</footer>
 	</body>
 </html>

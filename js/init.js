@@ -1,14 +1,7 @@
-$(function(){
+$(function () {
 	
-	var r = Raphael('map', 790, 1000),
-		attributes = {
-            fill: '#efae2f',
-            stroke: '#fff',
-            'stroke-width': 1,
-            'stroke-linejoin': 'round'
-        },
-		arr = new Array();
-			
+	var r = Raphael('map', 790, 1000);
+					
 	//Границы района
 	for (var bord in path_border) {	
 		var objBord = r.path(path_border[bord].path);
@@ -22,31 +15,34 @@ $(function(){
 			'stroke-opacity': 0.55,
 			'stroke-dashoffset': 0
 		});
-
 	};
 	
 	//Дороги для автомобилей
 	for (var road in path_road) {	
 		var objRoad = r.path(path_road[road].path);
 		
-		objRoad.attr("stroke", "#f70808");
-		objRoad.attr('stroke-width', "1");
-		objRoad.attr('stroke-linejoin', 'round');
+		objRoad.attr({
+			stroke: "#f70808",
+			'stroke-width': 1,
+			'stroke-linejoin': 'round'
+		});
+		
+		
 	};
 	
+	//Условное обозначение дороги
 	for (var roadColor in path_car) {	
 		var objRoadColor = r.path(path_car[roadColor].path);
-				
-		objRoadColor.attr("fill", "#f70808")
-		objRoadColor.attr("stroke", "#f70808");
-		objRoadColor.attr('stroke-width', "1");
-		objRoadColor.attr('stroke-linejoin', 'miter');
+		
+		objRoadColor.attr({
+			fill: "#f70808",
+			stroke: "#f70808",
+			'stroke-width': 1,
+			'stroke-linejoin': 'miter'
+		});
 	};
 	
 	r.text(560, 926, "- Дороги для автомобілів");
-	
-	
-	
 		
 	//Железные дороги
 	for (var train in path_train) {	
@@ -55,7 +51,7 @@ $(function(){
 		objTrain.attr({
 			stroke: '#674d4d',
 			'stroke-width': 1,
-      'stroke-linejoin': 'mitter',
+      'stroke-linejoin': 'miter',
 			'stroke-linecap': 'butt',
 			display: 'inline',
 			'stroke-opacity': 1
@@ -63,13 +59,16 @@ $(function(){
 
 	};
 	
+	//Условное обозначение железной дороги
 	for (var iron in path_ironRoad) {	
 		var objIron = r.path(path_ironRoad[iron].path);
-				
-		objIron.attr("fill", "#674d4d")
-		objIron.attr("stroke", "#674d4d");
-		objIron.attr('stroke-width', "1");
-		objIron.attr('stroke-linejoin', 'miter');
+		
+		objIron.attr({
+			fill: "#674d4d",
+			stroke: "#674d4d",
+			'stroke-width': 1,
+			'stroke-linejoin': 'miter'
+		});
 	};
 	
 	r.text(527, 960, "- Залізна дорога");
@@ -88,7 +87,6 @@ $(function(){
 			'stroke-linecap': 'round',
 			'stroke-opacity': 1
 		});
-
 	};
 	
 			//Узкие
@@ -103,16 +101,19 @@ $(function(){
 			'stroke-miterlimit': 4,
 			'stroke-opacity': 1
 		});
-
 	};
 	
+	//Условное обозначение рек
 	for (var waterColor in path_water) {	
 		var objWater = r.path(path_water[waterColor].path);
-				
-		objWater.attr("fill", "#2eade8")
-		objWater.attr("stroke", "#2eade8");
-		objWater.attr('stroke-width', "1");
-		objWater.attr('stroke-linejoin', 'miter');
+		
+		objWater.attr({
+			fill: "#2eade8",
+			stroke: "#2eade8",
+			'stroke-width': 1,
+			'stroke-linejoin': 'miter'
+		});
+
 	};
 	
 	r.text(493, 891, "- Вода");	
@@ -130,50 +131,55 @@ $(function(){
 			'stroke-linecap': 'round',
 			'stroke-opacity': 1
 		});
-
 	};
-	
+
+	//Условное обозначение древестной растительности
 	for (var treeColor in path_green) {	
 		var objTreeColor = r.path(path_green[treeColor].path);
-				
-		objTreeColor.attr("fill", "#54a752")
-		objTreeColor.attr("stroke", "#54a752");
-		objTreeColor.attr('stroke-width', "1");
-		objTreeColor.attr('stroke-linejoin', 'miter');
+		
+		objTreeColor.attr({
+			fill: "#54a752",
+			stroke: "#54a752",
+			'stroke-width': 1,
+			'stroke-linejoin': 'miter'
+		});
 	};
 	
 	r.text(540, 853, "- Лісові насадження");	
-	
-	
 	
 	//Фон верxний
 	for (var bgr in path_bgr_up) {	
 		var objBgrUp = r.path(path_bgr_up[bgr].path);
 		
-		
-		objBgrUp.attr("fill", "rgba(31, 102, 245, 0.1)");
-		objBgrUp.attr("fill-opacity", "0.1");
-		objBgrUp.attr("stroke", "rgba(31, 102, 245, 0.01)");
-		objBgrUp.attr("stroke-width","0.05");
-
+		objBgrUp.attr({
+			fill: "#1f66f5",
+			"fill-opacity": 0.2,
+			stroke: "rgba(31, 102, 245, 0.01)",
+			"stroke-width": 0.05
+		});
 	};
 	
 	//Фон нижний
 	for (var bgr in path_bgr_bottom) {	
 		var objBgrBottom = r.path(path_bgr_bottom[bgr].path);
-			
-		objBgrBottom.attr("fill", "#e8f108");
-		objBgrBottom.attr("fill-opacity", "0.19801983");
-		objBgrBottom.attr("stroke", "rgba(232, 241, 8, 0.01)");
-		objBgrBottom.attr("stroke-width", "0.05");
-
+		
+		objBgrBottom.attr({
+			fill: "#e8f108",
+			"fill-opacity": 0.2,
+			stroke: "rgba(232, 241, 8, 0.01)",
+			"stroke-width": 0.05
+		});
 	};
 	
-	
-	
-	
-	
 	//Населенные пункты
+	var attributes = {
+            fill: '#efae2f',
+            stroke: '#fff',
+            'stroke-width': 1,
+            'stroke-linejoin': 'round'
+        },
+			arr = new Array();
+	
 	for (var locality in villages) {
 		
 		var obj = r.path(villages[locality].path);
@@ -182,7 +188,7 @@ $(function(){
 		
 		arr[obj.id] = locality;
 		
-		obj.hover(function(){
+		obj.hover(function(){ 		//смена курсора при наведении на объект
 			this.attr({
 				cursor: 'pointer'
 			});
@@ -190,9 +196,9 @@ $(function(){
 			this.attr({
 				cursor: "auto"
 			});
-		})
+		});
 		
-		obj.hover(function(){
+		obj.hover(function(){			//смена цвета объекта под курсором
 			this.animate({
 				fill: '#1669AD'
 			}, 300);
@@ -201,7 +207,7 @@ $(function(){
 				fill: attributes.fill
 			}, 300);
 		})
-		.click(function(){
+		.click(function(e){				//появление окна с информацией
 			document.location.hash = arr[this.id];
 			
 			var point = this.getBBox(0);
@@ -209,7 +215,7 @@ $(function(){
 			$('#map').next('.point').remove();
 			
 			$('#map').after($('<div />').addClass('point'));
-			
+		
 			$('.point')
 			.html(villages[arr[this.id]].name)
 			.prepend($('<a />').attr('href', '#').addClass('close').text('Закрыть'))
@@ -218,7 +224,6 @@ $(function(){
 				top: point.y+(point.height/2)-20
 			})
 			.fadeIn();
-			
 		});
 		
 		$('body').on('click','.point .close', function(){
@@ -230,9 +235,9 @@ $(function(){
 			});
 			return false;
 		});
+	};
 
-	}
-	
+	//Названия селений на карте
 	r.text(580, 173, "Бармашове");
 	r.text(44, 700, "Галицинове");
 	r.text(445, 135, "Грейгове");
@@ -262,13 +267,16 @@ $(function(){
 	r.text(285, 590, "Шевченкове");
 	r.text(305, 325, "Воскресенськ");
 	
+	//Условные обозначения селений
 	for (var liveColor in path_live) {	
 		var objLiveColor = r.path(path_live[liveColor].path);
-				
-		objLiveColor.attr("fill", "#efae2f")
-		objLiveColor.attr("stroke", "#efae2f");
-		objLiveColor.attr('stroke-width', "1");
-		objLiveColor.attr('stroke-linejoin', 'miter');
+		
+		objLiveColor.attr({
+			fill: "#efae2f",
+			stroke: "#efae2f",
+			'stroke-width': 1,
+			'stroke-linejoin': 'miter'
+		});
 	};
 	
 	r.text(540, 820, "- Населенні пункти");
