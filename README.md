@@ -3,4 +3,3 @@
 Работает в IE6+, Firefox, Opera/Opera 12, Google Chrome.
 Без адаптива.
 
-<a href="http://zhovtneva-cbs-map.esy.es/">Карта</a>
